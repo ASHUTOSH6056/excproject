@@ -28,7 +28,6 @@ public class UserAuth {
                 }
             }
         } catch (FileNotFoundException e) {
-            // File will be created later if it doesn't exist
         } catch (IOException e) {
             System.out.println("Error checking users: " + e.getMessage());
         }
