@@ -1,5 +1,4 @@
 import java.io.*;
-//import java.util.*;
 public class UserAuth {
     private static final String FILE_NAME = "users.csv";
 
@@ -19,7 +18,6 @@ public class UserAuth {
     }
 
     public static boolean register(String username, String password) {
-        // Check if user already exists
         try (BufferedReader br = new BufferedReader(new FileReader(FILE_NAME))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -34,8 +32,6 @@ public class UserAuth {
         } catch (IOException e) {
             System.out.println("Error checking users: " + e.getMessage());
         }
-
-        // Register new user
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_NAME, true))) {
             bw.write(username + "," + password);
             bw.newLine();
